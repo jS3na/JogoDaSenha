@@ -24,6 +24,8 @@ public class JogoDaSenha {
 
     static int gerarRan(int contador) {
 
+        contador = 0;
+
         while (contador < 30) {
 
             int ran = (int) ((Math.random() * 100) + 1);//Gera um número aleatório entre 1 e 100 e armazena temporariamente na variável "ran"
