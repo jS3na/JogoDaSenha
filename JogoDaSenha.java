@@ -24,8 +24,6 @@ public class JogoDaSenha {
 
     static int gerarRan(int contador) {
 
-        contador = 0;
-
         while (contador < 30) {
 
             int ran = (int) ((Math.random() * 100) + 1);//Gera um número aleatório entre 1 e 100 e armazena temporariamente na variável "ran"
@@ -128,17 +126,35 @@ public class JogoDaSenha {
     }
 
     static void getNum(int[] escolhas, Scanner scan){
+
+        for(int m = 0; m < 5; m++){ //Limpa a lista de escolhidos
+            esc[m] = 0;
+        }
+
         System.out.println("Escolha 5 números:\n");
 
         for (int l = 0; l < 5; l++) {
+
+            int countEqual = 0; //Variável usada para contar a repetição de números
 
             try{ //Função try-catch, utilizada para quando ocorrer uma exceção, no caso, caso o usuário digite algo diferente de um inteiro, algo que pode comprometer o sistema
                 System.out.printf("Escolha o %dº número: ", l + 1);
                 escolhas[l] = scan.nextInt(); //Recebe os valores do usuário
 
+                for(int k : escolhas){
+                    if(escolhas[l] == k){
+                        countEqual++;
+                    }
+                }
+
                 }catch(InputMismatchException e){
                     String invStr = scan.next();
                     System.out.println("\nVocê digitou um caractere inválida, apenas números são aceitos!");
+                    l--;
+                }
+
+                if(countEqual > 1){
+                    System.out.println("Números repetidos não são permitidos!\n");
                     l--;
                 }
         }
