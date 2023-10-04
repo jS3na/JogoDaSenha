@@ -149,12 +149,6 @@ public class JogoDaSenha {
                     }
                 }
 
-                }catch(InputMismatchException e){
-                    String invStr = scan.next();
-                    System.out.println("\nVocê digitou um caractere inválida, apenas números são aceitos!");
-                    l--;
-                }
-
                 if(countEqual > 1){
                     System.out.println("Números repetidos não são permitidos!\n");
                     l--; //Se houver números iguais, ele volta um loop atrás para que o usuário digite novamente
@@ -164,6 +158,13 @@ public class JogoDaSenha {
                     System.out.println("Número inválido, digite algo entre 01 e 100!\n");
                     l--;
                 }
+
+                }catch(InputMismatchException e){
+                    String invStr = scan.next();
+                    System.out.println("\nVocê digitou um caractere inválida, apenas números são aceitos!");
+                    l--;
+                }
+
         }
     }
 
