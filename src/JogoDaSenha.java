@@ -1,5 +1,4 @@
-package jogodasenha;
-
+package src;
 import java.lang.Math; //Para importar o Random, função usada para gerar um número aleatório
 import java.util.InputMismatchException; //Para importar a exceção, caso o usuário digite algo diferente de um inteiro
 import java.util.Scanner; //Scanner, a bibloteca usada para pegar o input do teclado
