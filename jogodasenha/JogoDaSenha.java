@@ -1,3 +1,5 @@
+package jogodasenha;
+
 import java.lang.Math; //Para importar o Random, função usada para gerar um número aleatório
 import java.util.InputMismatchException; //Para importar a exceção, caso o usuário digite algo diferente de um inteiro
 import java.util.Scanner; //Scanner, a bibloteca usada para pegar o input do teclado
@@ -8,21 +10,21 @@ import java.util.Scanner; //Scanner, a bibloteca usada para pegar o input do tec
 
 public class JogoDaSenha {
 
-    private static int contadorLos = 0; //Contador de tentativas
+    public static int contadorLos = 0; //Contador de tentativas
 
-    private static int count = 0;
-    private static int esc[] = new int[5]; //Escolhas do Jogador
+    public static int count = 0;
+    public static int esc[] = new int[5]; //Escolhas do Jogador
 
-    private static int nums[] = new int[30]; //Números randomizados serão armazenados aqui
-    private static String numsstr[] = new String[30]; //String da lista dos números randomizados, conforme pedido no enuncidado do projeto
+    public static int nums[] = new int[30]; //Números randomizados serão armazenados aqui
+    public static String numsstr[] = new String[30]; //String da lista dos números randomizados, conforme pedido no enuncidado do projeto
 
-    private static boolean venceu = false; //Verificador da vitória do jogo, finalizando o loop principal se o valor for "true"
+    public static boolean venceu = false; //Verificador da vitória do jogo, finalizando o loop principal se o valor for "true"
 
-    static int quant = 0; //Contador de números que condizem com a escolha do Jogador
+    public static int quant = 0; //Contador de números que condizem com a escolha do Jogador
 
-    static Scanner scan = new Scanner(System.in); //Scanner, o sistema de input
+    public static Scanner scan = new Scanner(System.in); //Scanner, o sistema de input
 
-    static int gerarRan(int contador) {
+    public int gerarRan(int contador) {
 
         count = 0;
 
@@ -47,12 +49,17 @@ public class JogoDaSenha {
             for (int i = 0; i < 30; i++) {
                 numsstr[i] = Integer.toString(nums[i]); //Transforma os inteiros randomizados em uma String
             }
+
+            for(int f: nums){
+                System.out.println(f);
+            }
         
             return contador; // Retorna o valor de contador após o loop
+
         }
         
 
-    static int fazerTentativa(int[] numeros, int[] escolhas) { //Método que verifica quantos dos números digitados pelo Usuário estão na lista de 30 números randomizados
+    public int fazerTentativa(int[] numeros, int[] escolhas) { //Método que verifica quantos dos números digitados pelo Usuário estão na lista de 30 números randomizados
         int quant = 0;
 
         for (int in : numeros) {
@@ -66,7 +73,7 @@ public class JogoDaSenha {
     
 }
 
-    static boolean getSenha(String[] numeros, int quantidade){ //Método utilizado para dizer se o Usuário venceu ou não, mostrando os números da lista caso tenha vencido
+    public boolean getSenha(String[] numeros, int quantidade){ //Método utilizado para dizer se o Usuário venceu ou não, mostrando os números da lista caso tenha vencido
 
         if(quantidade == 5){
             System.out.print("--------------------------------------------------------------------------------------------------");
@@ -110,7 +117,6 @@ public class JogoDaSenha {
             }
         }
 
-
        else{
 
             System.out.println("\nVocê ainda não adivinhou a senha!");
@@ -122,12 +128,12 @@ public class JogoDaSenha {
        }
     }
 
-    static void getContadorPesquisa(int num){ //Método usado para mostrar quantas tentativas foram feitas no final
+    public static void getContadorPesquisa(int num){ //Método usado para mostrar quantas tentativas foram feitas no final
         num++;
         System.out.println("Comparações realizadas: "+ num);
     }
 
-    static void getNum(int[] escolhas, Scanner scan){
+    public void getNum(int[] escolhas, Scanner scan){
 
         for(int m = 0; m < 5; m++){ //Limpa a lista de escolhidos
             esc[m] = 0;
@@ -168,18 +174,6 @@ public class JogoDaSenha {
         }
     }
 
-    public static void main(String[] args){ //Método principal
-
-        JogoDaSenha novoJogo = new JogoDaSenha(); //Chamando a classe JogoDaSenha, no método principal
-
-        novoJogo.gerarRan(count); //Método que gera os números aleatórios
-
-        while(!novoJogo.venceu){ //Loop Principal
-
-            novoJogo.getNum(esc, scan); //Recebe as escolhas do jogador
-            quant = novoJogo.fazerTentativa(nums, esc); //Verifica quantos números da lista randomizados são iguais aos números recebidos do usuário, armazenando o valor na variável "quant"
-            venceu = novoJogo.getSenha(numsstr, quant); //Verifica se o jogador venceu o jogo, armazenando "true" na variável "venceu" finalizando o loop principal
-    
-        }
-    }
 }
+
+
