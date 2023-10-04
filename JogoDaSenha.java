@@ -145,7 +145,7 @@ public class JogoDaSenha {
 
                 for(int k : escolhas){
                     if(escolhas[l] == k){
-                        countEqual++;
+                        countEqual++; //Adiciona a "countEqual" +1 se houver números iguais
                     }
                 }
 
@@ -157,7 +157,7 @@ public class JogoDaSenha {
 
                 if(countEqual > 1){
                     System.out.println("Números repetidos não são permitidos!\n");
-                    l--;
+                    l--; //Se houver números iguais, ele volta um loop atrás para que o usuário digite novamente
                 }
         }
     }
