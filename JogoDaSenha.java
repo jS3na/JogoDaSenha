@@ -92,7 +92,7 @@ public class JogoDaSenha {
                 if (op == 2) {
                     System.out.println("Saindo...");
                     return true; //Retorna "true" se os acertos forem 5
-                } 
+                }
                 
                 else if (op == 1) {
                     System.out.println("Certo!");
@@ -133,7 +133,7 @@ public class JogoDaSenha {
             esc[m] = 0;
         }
 
-        System.out.println("Escolha 5 números:\n");
+        System.out.println("Escolha 5 números entre 1 e 100:\n");
 
         for (int l = 0; l < 5; l++) {
 
@@ -158,6 +158,11 @@ public class JogoDaSenha {
                 if(countEqual > 1){
                     System.out.println("Números repetidos não são permitidos!\n");
                     l--; //Se houver números iguais, ele volta um loop atrás para que o usuário digite novamente
+                }
+
+                else if(escolhas[l] < 1 || escolhas[l] > 100){ //Condição criada para alertar o usuário que só são permitidos números entre 01 e 100
+                    System.out.println("Número inválido, digite algo entre 01 e 100!\n");
+                    l--;
                 }
         }
     }
