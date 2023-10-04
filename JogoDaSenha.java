@@ -129,10 +129,6 @@ public class JogoDaSenha {
 
     static void getNum(int[] escolhas, Scanner scan){
 
-        for(int aa : nums){
-            System.out.println(aa);
-        }
-
         for(int m = 0; m < 5; m++){ //Limpa a lista de escolhidos
             esc[m] = 0;
         }
