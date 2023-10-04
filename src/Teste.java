@@ -1,5 +1,5 @@
 package src;
-public class Teste extends JogoDaSenha{
+public class Teste extends JogoDaSenha{ //Classe de teste, o comando "extends JogoDaSenha" foi utilizado para "puxar" os métodos da classe Principal do jogo.
 
     public static void main(String[] args){ //Método principal
 

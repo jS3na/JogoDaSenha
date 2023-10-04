@@ -48,10 +48,6 @@ public class JogoDaSenha {
             for (int i = 0; i < 30; i++) {
                 numsstr[i] = Integer.toString(nums[i]); //Transforma os inteiros randomizados em uma String
             }
-
-            for(int f: nums){
-                System.out.println(f);
-            }
         
             return contador; // Retorna o valor de contador após o loop
 
