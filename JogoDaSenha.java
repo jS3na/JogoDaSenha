@@ -24,6 +24,8 @@ public class JogoDaSenha {
 
     static int gerarRan(int contador) {
 
+        count = 0;
+
         while (contador < 30) {
 
             int ran = (int) ((Math.random() * 100) + 1);//Gera um número aleatório entre 1 e 100 e armazena temporariamente na variável "ran"
@@ -95,7 +97,7 @@ public class JogoDaSenha {
                 else if (op == 1) {
                     System.out.println("Certo!");
 
-                    gerarRan(contadorLos);
+                    gerarRan(count);
                     contadorLos = 0;
 
                     return false;
@@ -126,6 +128,10 @@ public class JogoDaSenha {
     }
 
     static void getNum(int[] escolhas, Scanner scan){
+
+        for(int aa : nums){
+            System.out.println(aa);
+        }
 
         for(int m = 0; m < 5; m++){ //Limpa a lista de escolhidos
             esc[m] = 0;
@@ -164,7 +170,7 @@ public class JogoDaSenha {
 
         JogoDaSenha novoJogo = new JogoDaSenha(); //Chamando a classe JogoDaSenha, no método principal
 
-        novoJogo.gerarRan(contadorLos); //Método que gera os números aleatórios
+        novoJogo.gerarRan(count); //Método que gera os números aleatórios
 
         while(!novoJogo.venceu){ //Loop Principal
 
