@@ -73,7 +73,7 @@ public class JogoDaSenha {
             System.out.println("\nVocê venceu!! Os números da senha são:");
             for (String numero : numeros) { //Percorre a string com a lista de 30 números aleatórios, para que imprima um por um
 
-                if(numero == numeros[0]){
+                if(numero.equals(numeros[0])){
                     System.out.print(numero);
                 }
                 else{
