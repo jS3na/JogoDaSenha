@@ -15,5 +15,4 @@ public class Teste extends JogoDaSenha{ //Classe de teste, o comando "extends Jo
     
         }
     }
-    
 }
