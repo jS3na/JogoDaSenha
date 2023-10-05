@@ -112,7 +112,7 @@ public class JogoDaSenha {
             }
         }
 
-       else{
+        else{
 
             System.out.println("\nVocê ainda não adivinhou a senha!");
             System.out.printf("Quantidade de acertos: %d\n\n", quantidade);
@@ -120,7 +120,8 @@ public class JogoDaSenha {
             contadorLos++; //Soma +1 a quantidade de tentativas
 
             return false; //Retorna "false" se os acertos ainda não tiverem chegado em 5
-       }
+
+        }
     }
 
     public static void getContadorPesquisa(int num){ //Método usado para mostrar quantas tentativas foram feitas no final
@@ -134,7 +135,7 @@ public class JogoDaSenha {
             esc[m] = 0;
         }
 
-        System.out.println("Escolha 5 números entre 1 e 100:\n");
+        System.out.println("Escolha 5 números entre 1 e 100:\n");   
 
         for (int l = 0; l < 5; l++) {
 
@@ -161,7 +162,7 @@ public class JogoDaSenha {
                 }
 
                 }catch(InputMismatchException e){
-                    String invStr = scan.next();
+                    scan.next();
                     System.out.println("\nVocê digitou um caractere inválida, apenas números são aceitos!");
                     l--;
                 }
@@ -170,5 +171,3 @@ public class JogoDaSenha {
     }
 
 }
-
-

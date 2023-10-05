@@ -7,7 +7,7 @@ public class Teste extends JogoDaSenha{ //Classe de teste, o comando "extends Jo
 
         novoJogo.gerarRan(count); //Método que gera os números aleatórios
 
-        while(!novoJogo.venceu){ //Loop Principal
+        while(!JogoDaSenha.venceu){ //Loop Principal
 
             novoJogo.getNum(esc, scan); //Recebe as escolhas do jogador
             quant = novoJogo.fazerTentativa(nums, esc); //Verifica quantos números da lista randomizados são iguais aos números recebidos do usuário, armazenando o valor na variável "quant"
