@@ -54,8 +54,46 @@ public class JogoDaSenha {
         }
         
 
-    public int fazerTentativa(int[] numeros, int[] escolhas) { //Método que verifica quantos dos números digitados pelo Usuário estão na lista de 30 números randomizados
+    public int fazerTentativa(int[] numeros, int[] escolhas, Scanner scan) { //Método que verifica quantos dos números digitados pelo Usuário estão na lista de 30 números randomizados
         int quant = 0;
+
+        for(int m = 0; m < 5; m++){ //Limpa a lista de escolhidos
+            esc[m] = 0;
+        }
+
+        System.out.println("Escolha 5 números entre 1 e 100:\n");   
+
+        for (int l = 0; l < 5; l++) {
+
+            int countEqual = 0; //Variável usada para contar a repetição de números
+
+            try{ //Função try-catch, utilizada para quando ocorrer uma exceção, no caso, caso o usuário digite algo diferente de um inteiro, algo que pode comprometer o sistema
+                System.out.printf("Escolha o %dº número: ", l + 1);
+                escolhas[l] = scan.nextInt(); //Recebe os valores do usuário
+
+                for(int k : escolhas){
+                    if(escolhas[l] == k){
+                        countEqual++; //Adiciona a "countEqual" +1 se houver números iguais
+                    }
+                }
+
+                if(countEqual > 1){
+                    System.out.println("Números repetidos não são permitidos!\n");
+                    l--; //Se houver números iguais, ele volta um loop atrás para que o usuário digite novamente
+                }
+
+                else if(escolhas[l] < 1 || escolhas[l] > 100){ //Condição criada para alertar o usuário que só são permitidos números entre 01 e 100
+                    System.out.println("Número inválido, digite algo entre 01 e 100!\n");
+                    l--;
+                }
+
+                }catch(InputMismatchException e){
+                    scan.next();
+                    System.out.println("\nVocê digitou um caractere inválida, apenas números são aceitos!");
+                    l--;
+                }
+
+        }
 
         for (int in : numeros) {
             for (int ij : escolhas) {
@@ -127,47 +165,6 @@ public class JogoDaSenha {
     public static void getContadorPesquisa(int num){ //Método usado para mostrar quantas tentativas foram feitas no final
         num++;
         System.out.println("Comparações realizadas: "+ num);
-    }
-
-    public void getNum(int[] escolhas, Scanner scan){
-
-        for(int m = 0; m < 5; m++){ //Limpa a lista de escolhidos
-            esc[m] = 0;
-        }
-
-        System.out.println("Escolha 5 números entre 1 e 100:\n");   
-
-        for (int l = 0; l < 5; l++) {
-
-            int countEqual = 0; //Variável usada para contar a repetição de números
-
-            try{ //Função try-catch, utilizada para quando ocorrer uma exceção, no caso, caso o usuário digite algo diferente de um inteiro, algo que pode comprometer o sistema
-                System.out.printf("Escolha o %dº número: ", l + 1);
-                escolhas[l] = scan.nextInt(); //Recebe os valores do usuário
-
-                for(int k : escolhas){
-                    if(escolhas[l] == k){
-                        countEqual++; //Adiciona a "countEqual" +1 se houver números iguais
-                    }
-                }
-
-                if(countEqual > 1){
-                    System.out.println("Números repetidos não são permitidos!\n");
-                    l--; //Se houver números iguais, ele volta um loop atrás para que o usuário digite novamente
-                }
-
-                else if(escolhas[l] < 1 || escolhas[l] > 100){ //Condição criada para alertar o usuário que só são permitidos números entre 01 e 100
-                    System.out.println("Número inválido, digite algo entre 01 e 100!\n");
-                    l--;
-                }
-
-                }catch(InputMismatchException e){
-                    scan.next();
-                    System.out.println("\nVocê digitou um caractere inválida, apenas números são aceitos!");
-                    l--;
-                }
-
-        }
     }
 
 }

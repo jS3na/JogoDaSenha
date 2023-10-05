@@ -9,8 +9,11 @@ public class Teste extends JogoDaSenha{ //Classe de teste, o comando "extends Jo
 
         while(!JogoDaSenha.venceu){ //Loop Principal
 
-            novoJogo.getNum(esc, scan); //Recebe as escolhas do jogador
-            quant = novoJogo.fazerTentativa(nums, esc); //Verifica quantos números da lista randomizados são iguais aos números recebidos do usuário, armazenando o valor na variável "quant"
+            for(int i : nums){
+                System.out.println(i);
+            }
+
+            quant = novoJogo.fazerTentativa(nums, esc, scan); //Verifica quantos números da lista randomizados são iguais aos números recebidos do usuário, armazenando o valor na variável "quant"
             venceu = novoJogo.getSenha(numsstr, quant); //Verifica se o jogador venceu o jogo, armazenando "true" na variável "venceu" finalizando o loop principal
     
         }
