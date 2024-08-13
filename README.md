@@ -1,42 +1,27 @@
+This is a simple Java game called "Password Game." The game challenges the player to guess 5 unique numbers randomly chosen from a set of 30 numbers. It tracks the number of attempts made and how many numbers the player guessed correctly on each attempt.
 
-Jogo da Senha em Java{
+Prerequisites:
 
-    Este é um simples jogo implementado em Java chamado "Jogo da Senha". O jogo desafia o jogador a adivinhar 5 números exclusivos escolhidos aleatoriamente a partir de um conjunto de 30 números. Ele conta o número de tentativas feitas e quantos números o jogador adivinhou a cada tentativa;
+    Java Development Kit (JDK) installed on your system.
+    A IDE, like vscode
 
-      Pré-requisitos(){
-        
-            Java Development Kit (JDK) instalado em seu sistema;
-            Um ambiente de desenvolvimento Java, como o Eclipse ou o IntelliJ IDEA, ou um terminal para compilar e executar o código manualmente;
+To Run the Game:
 
-        }
+    Ensure you have two Java files named PasswordGame.java and Test.java.
+    How the Game Works:
+    
+    The program generates 30 unique random numbers between 1 and 100 and stores them.
+    
+    You are challenged to guess 5 of these numbers.
+    
+    Enter 5 numbers between 1 and 100 when prompted. Repeated numbers, symbols, letters, or numbers outside the range of 1 to 100 are not allowed.
+    
+    The program will check how many of the numbers you guessed are in the list of 30 random numbers and inform you of how many you guessed correctly.
+    
+    If you correctly guess all the numbers, the program will notify you that you won, display the full password, and show how many attempts you made.
+    
+    You will have the option to continue playing or exit.
 
-      Para executar o jogo, siga estas etapas(){
+Final Notes:
 
-            Certifique-se de que haja dois arquivos Java, nomeados de JogoDaSenha.java e Teste.java;
-
-        }
-
-      Como o jogo funciona(){
-
-            O programa gera 30 números aleatórios exclusivos entre 1 e 100 e os armazena;
-
-            Você é desafiado a adivinhar 5 desses números;
-            
-            Digite 5 números entre 1 e 100 quando solicitado, não sendo permitido números repetidos, símbolos, letras ou algo que difere de números e números menores que 01 e maiores que 100;
-            
-            O programa verificará quantos dos números que você escolheu estão na lista dos 30 números aleatórios e informará quantos você adivinhou;
-            
-            Se você adivinhar corretamente todos os números, o programa informará que você venceu, mostrará a senha completa e quantas tentativas você fez.;
-            
-            Você terá a opção de continuar jogando ou sair;
-
-        }
-
-      Considerações Finais(){
-
-      Este é um jogo simples projetado para entretenimento e prática de programação em Java. Divirta-se jogando e desafiando a sua habilidade de adivinhação!
-      Divirta-se!
-
-      }
-
-}
+    This is a simple game designed for entertainment and practice with Java programming. Have fun playing and testing your guessing skills!
